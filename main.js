@@ -52,7 +52,6 @@ selects.forEach(select => {
 
 //xuất ds
 function OutList(list){
-    console.log(list);
     for(let i=1;i<list.length;i++){
         ul.innerHTML+=`<li>${list[i]['Column 1']} chọn Tết</li>`
     }
