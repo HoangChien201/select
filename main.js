@@ -30,7 +30,7 @@ closebtn.onclick=()=>{
 
 submit.onclick = () => {
     formCheck()
-    // FetchAPI()
+    FetchAPI()
     // DELETEAPI(2)
 }
 
@@ -39,13 +39,13 @@ const fisnish = $('.fisnish')
 
 selects.forEach(select => {
     select.onclick = () => {
-        if (select.innerText != 'Xám') {
+        if (select.innerText != 'Tết') {
             const random = Math.floor(Math.random() * (80 - 10) + 10);
             select.style.top = `${random}%`
         }
         else {
             fisnish.style.display = "flex"
-            // POSTAPI(nameUser)
+            POSTAPI(nameUser)
         }
     }
 });
@@ -54,7 +54,7 @@ selects.forEach(select => {
 function OutList(list){
     console.log(list);
     for(let i=1;i<list.length;i++){
-        ul.innerHTML+=`<li>${list[i]['Column 1']} chọn đi Xám</li>`
+        ul.innerHTML+=`<li>${list[i]['Column 1']} chọn Tết</li>`
     }
 }
 
