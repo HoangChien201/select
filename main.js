@@ -31,7 +31,7 @@ closebtn.onclick=()=>{
 submit.onclick = () => {
     formCheck()
     FetchAPI()
-    // DELETEAPI(2)
+    // DELETEAPI(7)
 }
 
 const selects = document.querySelectorAll('.select')
@@ -45,15 +45,16 @@ selects.forEach(select => {
         }
         else {
             fisnish.style.display = "flex"
-            POSTAPI(nameUser)
+            POSTAPI(nameUser,'Tết')
         }
     }
 });
 
 //xuất ds
 function OutList(list){
+    console.log(list);
     for(let i=1;i<list.length;i++){
-        ul.innerHTML+=`<li>${list[i]['Column 1']} chọn Tết</li>`
+        ul.innerHTML+=`<li>${list[i]['Column 1']}</li>`
     }
 }
 
@@ -69,14 +70,14 @@ function FetchAPI() {
         })
 }
 
-function POSTAPI(data) {
+function POSTAPI(nameUser,data) {
     fetch('https://retoolapi.dev/XC86zY/data', {
         method: 'POST',
         headers: {
             'Accept': 'application/json, text/plain, */*',
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ ['Column 1']: data })
+        body: JSON.stringify({ ['Column 1']:`${nameUser} chọn ${data} `})
     }).then(res => res.json())
         .then(res => console.log(res));
 
