@@ -39,7 +39,7 @@ const fisnish = $('.fisnish')
 
 selects.forEach(select => {
     select.onclick = () => {
-        if (select.innerText != 'Tết') {
+        if (select.innerText != 'Tháng 8') {
             const random = Math.floor(Math.random() * (80 - 10) + 10);
             select.style.top = `${random}%`
         }
